@@ -10,6 +10,17 @@ The examples come from my JavaFX tutorial series: [JavaFX Tutorial](http://tutor
 In general the examples in this repository will attempt to use the latest version of Java and JavaFX. 
 For now the examples are tested with Java 14 and JavaFX 14 (yes, 15 + 15 are latest - will update soon!).
 
+## Running the Examples
+To run the examples you need to have the correct Java SDK installed, and the correct JavaFX release downloaded
+and unzipped. Then add the JavaFX modules to your classpath in your IDE. When running an example you need to
+add the following to the JVM args:
+
+--module-path C:\data\downloads\javafx\javafx-sdk-14\lib --add-modules javafx.controls,javafx.fxml
+
+Remember to replace the C:\data\downloads\javafx\javafx-sdk-14\lib  part with the actual file system path
+to the JavaFX version you have downloaded and unzipped. Remember to use the correct path style for your OS.
+
+
 ## Suggestions
 If you have any suggestions for missing examples, create a GitHub issue in this repo, and / or ping me on 
 Twitter (@jjenkov) or Linked In (Jakob Jenkov).
