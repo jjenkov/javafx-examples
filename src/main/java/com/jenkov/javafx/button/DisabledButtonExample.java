@@ -7,9 +7,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * Shows a simple JavaFX Button - and prints a text when the button is clicked.
+ * Shows a Button that is disabled via the call to setDisable(true)
  */
-public class ButtonExample extends Application {
+public class DisabledButtonExample extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -21,6 +21,8 @@ public class ButtonExample extends Application {
         Button button = new Button();
 
         button.setText("Click me!");
+
+        button.setDisable(true);
 
         button.setOnAction((event) -> {
             System.out.println("Button clicked!");
