@@ -23,15 +23,16 @@ to the JavaFX version you have downloaded and unzipped. Remember to use the corr
 
 ## Suggestions
 If you have any suggestions for missing examples, create a GitHub issue in this repo, and / or ping me on 
-Twitter (@jjenkov) or Linked In (Jakob Jenkov).
+Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
 
 
 # JavaFX Example List
 
- - [Button Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/ButtonExample.java)
  - Stage Examples
    - [Stage Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/StageExample.java)
    - [Stage Decoration Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/StageDecorationExample.java)
    - [Multiple Stages Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/MultipleStagesExample.java)
    - [Multiple Stages Modal Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/MultipleStagesModalExample.java)
    - [Full Screen Stage Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/FullScreenStageExample.java)
+ - [Scene Cursor Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/scene/SceneCursorExample.java)
+ - [Button Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/ButtonExample.java)
