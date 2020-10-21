@@ -10,4 +10,4 @@ For now the examples are tested with Java 14 and JavaFX 14 (yes, 15 + 15 are lat
 
 # JavaFX Example List
 
-[Button Example] (../blob/main/src/main/java/com/jenkov/javafx/button/ButtonExample.java)
+[Button Example] (https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/ButtonExample.java)
