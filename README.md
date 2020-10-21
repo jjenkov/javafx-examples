@@ -34,7 +34,7 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
    - [Multiple Stages Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/MultipleStagesExample.java)
    - [Multiple Stages Modal Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/MultipleStagesModalExample.java)
    - [Full Screen Stage Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/FullScreenStageExample.java)
-   - [Auto Shutdown Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/AutoShutdownExample.java)
+   - [Auto Shutdown Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/AutoShutDownExample.java)
  - [Scene Cursor Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/scene/SceneCursorExample.java)
  - Button Examples
    - [Button Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/ButtonExample.java)
@@ -42,3 +42,4 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [Accordion Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/accordion/AccordionExample.java)
  - [Animation Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/animation/AnimationExample.java)
  - [Color Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/color/ColorExample.java)
+ - [ColorPicker Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/colorpicker/ColorPickerExample.java)
