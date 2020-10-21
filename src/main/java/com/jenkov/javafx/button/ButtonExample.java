@@ -19,14 +19,14 @@ public class ButtonExample extends Application {
 
         button.setText("Click me!");
 
-        button.setDisable(true);
+        button.setOnAction((event) -> {
+            System.out.println("Button clicked!");
+        });
+
 
         VBox vbox = new VBox(button);
-
         Scene scene = new Scene(vbox);
-
         primaryStage.setScene(scene);
-
         primaryStage.show();
     }
 
