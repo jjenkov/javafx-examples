@@ -17,6 +17,22 @@ import org.w3c.dom.Document;
 import java.util.Date;
 import java.util.Iterator;
 
+/*
+    Mouse wheel zoom by Friedhold Matz @FriedholdMatz :
+
+        // --- Scroll Zooming ---
+        webView.addEventFilter(ScrollEvent.SCROLL, (ScrollEvent e) -> {
+            double deltaY = e.getDeltaY();
+            if (e.isControlDown() && deltaY > 0) {
+                webView.setZoom(webView.getZoom() * 1.1);
+                e.consume();
+            } else if (e.isControlDown() && deltaY < 0) {
+                webView.setZoom(webView.getZoom() / 1.1);
+                e.consume();
+            }
+        });
+ */
+
 public class WebViewExample extends Application {
 
     public static class MyObject {

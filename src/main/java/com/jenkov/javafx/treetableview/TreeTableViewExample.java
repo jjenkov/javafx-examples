@@ -1,6 +1,5 @@
 package com.jenkov.javafx.treetableview;
 
-import com.jenkov.javafx.model.Car;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
