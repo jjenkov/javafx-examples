@@ -34,7 +34,6 @@ public class TableViewExample extends Application {
         tableView.getItems().add(new Person("Jane", "Deer"));
 
         VBox vbox = new VBox(tableView);
-
         Scene scene = new Scene(vbox);
 
         primaryStage.setScene(scene);
