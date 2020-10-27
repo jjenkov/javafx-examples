@@ -15,7 +15,11 @@ To run the examples you need to have the correct Java SDK installed, and the cor
 and unzipped. Then add the JavaFX modules to your classpath in your IDE. When running an example you need to
 add the following to the JVM args:
 
---module-path C:\data\downloads\javafx\javafx-sdk-14\lib --add-modules javafx.controls,javafx.fxml
+--module-path C:\data\downloads\javafx\javafx-sdk-14\lib --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web
+
+Obviously you only need to add the JavaFX modules you are actually using. The above line just adds all JavaFX modules to the module path 
+so it should work with all JavaFX examples.
+
 
 Remember to replace the C:\data\downloads\javafx\javafx-sdk-14\lib  part with the actual file system path
 to the JavaFX version you have downloaded and unzipped. Remember to use the correct path style for your OS.
@@ -72,4 +76,7 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [TreeTableView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/treetableview/TreeTableViewExample.java)
  - [TreeView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/treeview/TreeViewExample.java)
  - [VBox Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/vbox/VBoxExample.java)
- - [WebView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewExample.java)
+ - WebView Examples
+   - [WebView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewExample.java)
+   - [WebView JavaScript Integration Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewJavaScriptIntegrationExample.java)
+   - [WebView Mouse Wheel Zoom Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewMouseWheelZoomExample.java) Thank you to Friedhold Matz (@FriedholdMatz on Twitter) for the mouse wheel zoom code!
