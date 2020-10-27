@@ -15,7 +15,7 @@ To run the examples you need to have the correct Java SDK installed, and the cor
 and unzipped. Then add the JavaFX modules to your classpath in your IDE. When running an example you need to
 add the following to the JVM args:
 
---module-path C:\data\downloads\javafx\javafx-sdk-14\lib --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web
+    --module-path C:\data\downloads\javafx\javafx-sdk-14\lib --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web
 
 Obviously you only need to add the JavaFX modules you are actually using. The above line just adds all JavaFX modules to the module path 
 so it should work with all JavaFX examples.
