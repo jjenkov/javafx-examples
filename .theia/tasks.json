@@ -1,0 +1,35 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "run AccordionExample",
+            "type": "shell",
+            "command": "mvn exec:java -D\"exec.mainClass=com.jenkov.javafx.accordion.AccordionExample\"",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "run AnimationExample",
+            "type": "shell",
+            "command": "mvn exec:java -D\"exec.mainClass=com.jenkov.javafx.animation.AnimationExample\"",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "run ButtonExample",
+            "type": "shell",
+            "command": "mvn exec:java -D\"exec.mainClass=com.jenkov.javafx.button.ButtonExample\"",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "run DisabledButtonExample",
+            "type": "shell",
+            "command": "mvn exec:java -D\"exec.mainClass=com.jenkov.javafx.button.DisabledButtonExample\"",
+            "group": "none",
+            "problemMatcher": []
+        }
+    ]
+}
