@@ -81,4 +81,6 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
    - [WebView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewExample.java)
    - [WebView JavaScript Integration Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewJavaScriptIntegrationExample.java)
    - [WebView Mouse Wheel Zoom Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewMouseWheelZoomExample.java) 
-     (Mouse wheel zoom code provided by Friedhold Matz (@FriedholdMatz on Twitter)) 
+     (Mouse wheel zoom code provided by Friedhold Matz (@FriedholdMatz on Twitter))
+ - 3D Examples
+   - [3D Basics Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/gfx3d/Gfx3DExample.java)
