@@ -18,8 +18,11 @@ import java.io.File;
 import java.net.MalformedURLException;
 
 /**
- * A simple JavaFX animation examples. Animates a Circle's X property by translating (moving) it 200 points
- * over 10 seconds.
+ * Shows a simple JavaFX Media, MediaPlayer and MediaView example, playing an MP4 video. Please note that the
+ * video is downloaded from Pixabay.com. Please do not redistribute the video for any purpose. Download it from Pixabay
+ * if you want to use it:
+ *
+ * https://pixabay.com/videos/golden-particles-overlay-decoration-48569/
  */
 
 public class MediaExample extends Application {
