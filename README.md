@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jjenkov/javafx-examples)
+
 # JavaFX Examples
 This repository contains a growing collection of JavaFX examples. I am converting existing examples from my
 own hard drive, but I need to clean each example up before I am able to share it. I have somewhere between 50 and 
