@@ -1,0 +1,8 @@
+The video file Golden-48569.mp4 is downloaded from the Pixabay.com free, royalty free image, photo and video service.
+
+I have included this file in the GitHub repo *only* for use in the JavaFX media examples.
+
+Please do not redistribute this file for any purpose! If you want to use this file, please go to Pixabay.com
+and download it from there:
+
+https://pixabay.com/videos/golden-particles-overlay-decoration-48569/
