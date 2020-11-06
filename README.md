@@ -1,7 +1,9 @@
 # JavaFX Examples
 This repository contains a growing collection of JavaFX examples. I am converting existing examples from my
 own hard drive, but I need to clean each example up before I am able to share it. I have somewhere between 50 and 
-100 examples I plan to share after clean up.
+100 examples I plan to share after clean up. 
+
+The list of examples is found here: [JavaFX Example List](#javafx-example-list)
 
 ## JavaFX Tutorial
 The examples come from my JavaFX tutorial series: [JavaFX Tutorial](http://tutorials.jenkov.com).
@@ -13,15 +15,44 @@ For now the examples are tested with Java 14 and JavaFX 14 (yes, 15 + 15 are lat
 ## Running the Examples
 There are 3 option to run the examples.
 
-1: using your IDE: you should call main of each example you wish from ExampleRunner class. You can not just run the main form the exmaple class because
-you will get a "Error: JavaFX runtime components are missing, and are required to run this application" error for example if you want to run ButtonExample you can add this line:
-	ButtonExample.main(args);
-to the ExampleRunner class and then run ExampleRunner main.
+- Using your IDE (IntelliJ IDEA / Eclipse / Netbeans)
+- Using Maven - passing main class to run on the command line
+- Using Maven - configuring the main class inside the pom.xml
 
-2: you can use maven and pass the example class you want to add. for example to run WebViewExample you can run
+Some of these are covered in more detail below.
+
+### Run the Examples in IntelliJ Idea
+To run the examples from within IntelliJ IDEA you must first create a new project in IntelliJ, and set the root
+directory to the directory into which you have cloned this Git repository. 
+
+Second, you must download JavaFX and unzip the distribution to some directory.
+
+Third, you must add all the JAR files found in the "lib" directory to your project's classpath.
+
+Fourth, you must create a run configuration for the example class you want to run. Add the following
+JVM args to that run configuration:
+
+--module-path C:\data\downloads\javafx\javafx-sdk-14\lib --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web
+
+Make sure that the --module-path points to the directory you unzipped your downloaded JavaFX distribution to (meaning the "lib" dir within that JavaFX distribution dir - as shown above).
+
+### Run in IDE - alternative
+Instead of creating run configuration for each example class you can create a run configuration for the ExampleRunner class, and then from inside the
+ExampleRunner class, call the example class you want to run - by changing the main() method inside the ExampleRunner class. For instance,
+add the following line to the ExampleRunner class main() method and then run ExampleRunner main
+
+	ButtonExample.main(args);
+
+
+### Run via Maven - Passing Main Class as Argument to Maven
+You can use maven and pass the example class you want to add. for example to run WebViewExample you can run
+
 ./mvnw compile exec:java -Dexec.args="com.jenkov.javafx.webview.WebViewExample"
 
-3: you can change the pox.xml. you should change "mainClass" of openjfx plugin configuration and select the example you want then run
+
+### Run via Maven
+You can use Maven and edit the pom.xml file and change "mainClass" of openjfx plugin configuration and select the example you want then run
+
 ./mvnw clean javafx:run
 
 
@@ -29,7 +60,7 @@ to the ExampleRunner class and then run ExampleRunner main.
 If you have any suggestions for missing examples, create a GitHub issue in this repo, and / or ping me on 
 Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
 
-
+<a name="javafx-example-list"></a>
 # JavaFX Example List
 
  - Stage Examples
