@@ -4,3 +4,10 @@
 
 target/
 out/
+
+build/
+bin/
+.classpath
+.project
+.settings
+
