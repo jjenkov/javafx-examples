@@ -77,6 +77,7 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
    - [Disabled Button Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/DisabledButtonExample.java)
  - [Accordion Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/accordion/AccordionExample.java)
  - [Animation Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/animation/AnimationExample.java)
+ - [Canvas Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/canvas/CanvasExample.java)
  - [Color Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/color/ColorExample.java)
  - [ColorPicker Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/colorpicker/ColorPickerExample.java)
  - [Concurrency Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/concurrency/ConcurrencyExample.java)
