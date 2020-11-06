@@ -13,7 +13,7 @@ In general the examples in this repository will attempt to use the latest versio
 For now the examples are tested with Java 14 and JavaFX 14 (yes, 15 + 15 are latest - will update soon!).
 
 ## Running the Examples
-There are 3 option to run the examples.
+There are 3 options to run the examples.
 
 - Using your IDE (IntelliJ IDEA / Eclipse / Netbeans)
 - Using Maven - passing main class to run on the command line
