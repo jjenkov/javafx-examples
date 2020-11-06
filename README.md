@@ -11,18 +11,18 @@ In general the examples in this repository will attempt to use the latest versio
 For now the examples are tested with Java 14 and JavaFX 14 (yes, 15 + 15 are latest - will update soon!).
 
 ## Running the Examples
-To run the examples you need to have the correct Java SDK installed, and the correct JavaFX release downloaded
-and unzipped. Then add the JavaFX modules to your classpath in your IDE. When running an example you need to
-add the following to the JVM args:
+There are 3 option to run the examples.
 
-    --module-path C:\data\downloads\javafx\javafx-sdk-14\lib --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web
+1: using your IDE: you should call main of each example you wish from ExampleRunner class. You can not just run the main form the exmaple class because
+you will get a "Error: JavaFX runtime components are missing, and are required to run this application" error for example if you want to run ButtonExample you can add this line:
+	ButtonExample.main(args);
+to the ExampleRunner class and then run ExampleRunner main.
 
-Obviously you only need to add the JavaFX modules you are actually using. The above line just adds all JavaFX modules to the module path 
-so it should work with all JavaFX examples.
+2: you can use maven and pass the example class you want to add. for example to run WebViewExample you can run
+./mvnw compile exec:java -Dexec.args="com.jenkov.javafx.webview.WebViewExample"
 
-
-Remember to replace the C:\data\downloads\javafx\javafx-sdk-14\lib  part with the actual file system path
-to the JavaFX version you have downloaded and unzipped. Remember to use the correct path style for your OS.
+3: you can change the pox.xml. you should change "mainClass" of openjfx plugin configuration and select the example you want then run
+./mvnw clean javafx:run
 
 
 ## Suggestions
