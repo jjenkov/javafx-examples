@@ -29,6 +29,9 @@ public class CanvasExample extends Application {
         graphicsContext2D.setFill(Color.valueOf("#ff0000"));
         graphicsContext2D.fillRect(100, 100, 200, 200);
 
+        graphicsContext2D.setStroke(Color.valueOf("#0000ff"));
+        graphicsContext2D.strokeRect(200, 200, 200, 200);
+
         VBox vbox = new VBox(canvas);
         Scene scene = new Scene(vbox);
         primaryStage.setScene(scene);
