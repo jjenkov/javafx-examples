@@ -7,44 +7,56 @@
 	<groupId>com.jenkov</groupId>
 	<artifactId>javafx-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<maven.compiler.source>14</maven.compiler.source>
+		<maven.compiler.target>14</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<javafx.version>14.0.2</javafx.version>
+		<mainClass>com.jenkov.javafx.treetableview.TreeTableViewExample</mainClass>
+	</properties>
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.openjfx -->
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-base</artifactId>
-			<version>14.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
-			<version>14.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-graphics</artifactId>
-			<version>14.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-media</artifactId>
-			<version>14.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-swing</artifactId>
-			<version>14.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
-			<version>14.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-web</artifactId>
-			<version>14.0.2</version>
+			<version>${javafx.version}</version>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 
@@ -56,21 +68,16 @@
 					<mainClass>com.jenkov.javafx.ExampleRunnerFromMaven</mainClass>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.openjfx</groupId>
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.5</version>
 				<configuration>
-					<mainClass>com.jenkov.javafx.media.MediaExample</mainClass>
+					<mainClass>${mainClass}</mainClass>
 				</configuration>
 			</plugin>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<release>14</release>
-				</configuration>
-			</plugin>
+
 		</plugins>
 	</build>
 </project>
