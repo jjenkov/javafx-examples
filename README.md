@@ -17,11 +17,12 @@ There are 3 options to run the examples.
 
 - Using your IDE (IntelliJ IDEA / Eclipse / Netbeans)
 - Using Maven - passing main class to run on the command line
+- Using gradle - passing main class to run on the command line
 - Using Maven - configuring the main class inside the pom.xml
 
 Some of these are covered in more detail below.
 
-### Run the Examples in IntelliJ Idea
+### Run the Examples in IntelliJ Idea(needs pre-downloaded javafx modules)
 To run the examples from within IntelliJ IDEA you must first create a new project in IntelliJ, and set the root
 directory to the directory into which you have cloned this Git repository. 
 
@@ -37,7 +38,7 @@ JVM args to that run configuration:
 Make sure that the --module-path points to the directory you unzipped your downloaded JavaFX distribution to (meaning the "lib" dir within that JavaFX distribution dir - as shown above).
 
 ### Run in IDE - alternative
-Instead of creating run configuration for each example class you can create a run configuration for the ExampleRunner class, and then from inside the
+Instead of creating run configuration for each example class you can create a run configuration for the ExampleRunner class(based on maven or gradle nature. Both are supported using wrappers so you don't need to have any of them on you system and you can choose to use the one you prefer), and then from inside the
 ExampleRunner class, call the example class you want to run - by changing the main() method inside the ExampleRunner class. For instance,
 add the following line to the ExampleRunner class main() method and then run ExampleRunner main
 
@@ -49,6 +50,10 @@ You can use maven and pass the example class you want to add. for example to run
 
 ./mvnw compile exec:java -Dexec.args="com.jenkov.javafx.webview.WebViewExample"
 
+### Run via Gradle - Passing Main Class as Argument to Gradle
+You can use gradle and pass the example class you want to add. for example to run WebViewExample you can run
+
+./gradlew run --args="com.jenkov.javafx.webview.WebViewExample"
 
 ### Run via Maven
 You can use Maven and edit the pom.xml file and change "mainClass" of openjfx plugin configuration and select the example you want then run
