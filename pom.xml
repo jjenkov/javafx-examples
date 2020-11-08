@@ -9,13 +9,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<maven.compiler.source>14</maven.compiler.source>
-		<maven.compiler.target>14</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<javafx.version>14.0.2</javafx.version>
-		<mainClass>com.jenkov.javafx.treetableview.TreeTableViewExample</mainClass>
+		<javafx.version>15.0.1</javafx.version>
+		<mainClass>com.jenkov.javafx.stage.MultipleStagesModalExample</mainClass>
 	</properties>
 
 	<dependencies>
@@ -75,6 +73,14 @@
 				<version>0.0.5</version>
 				<configuration>
 					<mainClass>${mainClass}</mainClass>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>14</release>
 				</configuration>
 			</plugin>
 
