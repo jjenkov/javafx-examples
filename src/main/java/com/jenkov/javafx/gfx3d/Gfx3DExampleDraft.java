@@ -32,39 +32,39 @@ public class Gfx3DExampleDraft extends Application {
 
         Box box = new Box(100,100,100);
         box.setCullFace(CullFace.NONE);
-        box.setTranslateX(250);
+        box.setTranslateX(450);
         box.setTranslateY(100);
         box.setTranslateZ(400);
 
         boolean fixedEyeAtCameraZero = false;
         PerspectiveCamera camera = new PerspectiveCamera(fixedEyeAtCameraZero);
         camera.setTranslateX(100);
-        camera.setTranslateY(-50);
+        camera.setTranslateY(-75);
         camera.setTranslateZ(300);
 
-        RotateTransition rt = new RotateTransition(Duration.seconds(2), camera);
-        rt.setCycleCount(Animation.INDEFINITE);
-        rt.setFromAngle(0);
-        rt.setToAngle(90);
-        rt.setAutoReverse(true);
-        rt.setAxis(Rotate.X_AXIS);
-        rt.play();
+        RotateTransition rotateTransition = new RotateTransition(Duration.seconds(2), camera);
+        rotateTransition.setCycleCount(Animation.INDEFINITE);
+        rotateTransition.setFromAngle(0);
+        rotateTransition.setToAngle(360);
+        rotateTransition.setAutoReverse(true);
+        rotateTransition.setAxis(Rotate.X_AXIS);
+        rotateTransition.play();
 
         PointLight redLight = new PointLight();
-        redLight.setColor(Color.RED);
+        redLight.setColor(Color.valueOf("#ff0000"));
         redLight.setTranslateX(250);
         redLight.setTranslateY(-100);
         redLight.setTranslateZ(250);
 
         PointLight greenLight = new PointLight();
-        greenLight.setColor(Color.GREEN);
-        greenLight.setTranslateX(250);
-        greenLight.setTranslateY(300);
-        greenLight.setTranslateZ(300);
+        greenLight.setColor(Color.valueOf("#00ff00"));
+        greenLight.setTranslateX(275);
+        greenLight.setTranslateY(325);
+        greenLight.setTranslateZ(325);
 
         Group root = new Group(box, redLight, greenLight);
         root.setRotationAxis(Rotate.X_AXIS);
-        root.setRotate(30);
+        root.setRotate(70);
 
         Scene scene = new Scene(root, 500, 300, true);
         scene.setCamera(camera);
