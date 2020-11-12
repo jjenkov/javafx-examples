@@ -7,10 +7,9 @@ import javafx.scene.input.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class DragAndDropExample extends Application {
+public class DragAndDropExampleDraft extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -30,12 +29,37 @@ public class DragAndDropExample extends Application {
             content.putString("Circle source text");
             db.setContent(content);
         });
+        circle.setOnDragDone((DragEvent event) -> {
+            System.out.println("Circle 1 Drag and Drop Done");
+            event.consume();
+        });
+        circle.setOnDragDropped((DragEvent event) -> {
+            System.out.println("Circle 1 drag dropped");
+        });
+
         circle.setOnMouseDragged((MouseEvent event) -> {
             //System.out.println("Circle 1 mouse dragged");
             event.setDragDetect(true);
         });
+        circle.setOnMousePressed((MouseEvent event) -> {
+            //circle.setMouseTransparent(true);
+        });
+        circle.setOnMouseReleased((MouseEvent event) -> {
+            //circle.setMouseTransparent(false);
+        });
 
         Circle circle2 = createCircle("#00ffff", "#88ffff",300);
+
+        circle2.setOnMouseDragEntered((MouseEvent event) -> {
+            circle2.setStroke(Color.valueOf("#ff8888"));
+        });
+        circle2.setOnMouseDragExited((MouseEvent event) -> {
+            circle2.setStroke(Color.valueOf("#00ffff"));
+        });
+
+        circle2.setOnMouseDragReleased((MouseEvent event) -> {
+            //System.out.println("Circle 2 -> Drag and dropped...");
+        });
 
         circle2.setOnDragOver(new EventHandler<DragEvent>() {
             public void handle(DragEvent event) {
