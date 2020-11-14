@@ -89,6 +89,7 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [ContextMenu Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/contextmenu/ContextMenuExample.java)
  - [DirectoryChooser Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/directorychooser/DirectoryChooserExample.java)
  - [FileChooser Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/filechooser/FileChooserExample.java)
+ - [Font Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/font/FontExample.java)
  - [FXML Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/fxml/FXMLExample.java)
  - [HTMLEditor Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/htmleditor/HtmlEditorExample.java)
  - [Hyperlink Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/hyperlink/HyperlinkExample.java)
