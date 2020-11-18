@@ -4,8 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 
 public class FXMLExample extends Application{
@@ -21,8 +23,12 @@ public class FXMLExample extends Application{
         MyFxmlController controller = new MyFxmlController();
         controller.setValue("New value");
 
+        File mediaFile = new File("assets/fxml/hello-world.fxml");
+        URL fxmlUrl = mediaFile.toURI().toURL();
+
+
         loader.setController(controller);
-        loader.setLocation(new URL("file:///C:/data/projects/tutorial-projects/javafx-9-examples/src/main/resources/com.jenkov.javafx/hello-world.fxml"));
+        loader.setLocation(fxmlUrl);
         VBox vbox = loader.<VBox>load();
 
         MyFxmlController controllerRef = loader.getController();

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml" spacing="20">
+<children>
+    <Label fx:id="label1" text="Line 1"/>
+    <Label fx:id="label2" text="Line 2"/>
+    <Button fx:id="button1" text="Click me!" onAction="#buttonClicked"/>
+</children>
+</VBox>
