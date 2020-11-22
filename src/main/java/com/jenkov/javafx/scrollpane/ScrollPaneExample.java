@@ -23,7 +23,7 @@ public class ScrollPaneExample extends Application {
         //String imagePath = "file://E:/video-projects/tutorials/java-switch-expression/assets/aerial-beverage-caffeine-972533.jpg";
 
         //choose the path for some large image on your hard disk here.
-        String imagePath = "images/aerial-beverage-caffeine-972533.jpg";
+        String imagePath = "assets/media/abstract-5719221_640.jpg";
         ImageView imageView = new ImageView(new Image(new FileInputStream(imagePath)));
 
         //ScrollPane scrollPane = new ScrollPane(imageView);
@@ -32,8 +32,10 @@ public class ScrollPaneExample extends Application {
         scrollPane.fitToHeightProperty().set(true);
         scrollPane.pannableProperty().set(true);
 
-        scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        //scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
+        //scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.ALWAYS);
+        scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 
         scrollPane.setContent(imageView);
 
