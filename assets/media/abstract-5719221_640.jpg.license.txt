@@ -1,0 +1,8 @@
+The image file abstract-5719221_640.jpg is downloaded from the Pixabay.com free, royalty free image, photo and video service.
+
+I have included this file in the GitHub repo *only* for use in the JavaFX examples.
+
+Please do not redistribute this file for any purpose! If you want to use this file, please go to Pixabay.com
+and download it from there:
+
+https://pixabay.com/illustrations/abstract-dust-background-wallpaper-5719221/
