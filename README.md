@@ -1,7 +1,7 @@
 # JavaFX Examples
-This repository contains a growing collection of JavaFX examples. I am converting existing examples from my
-own hard drive, but I need to clean each example up before I am able to share it. I have somewhere between 50 and 
-100 examples I plan to share after clean up. 
+This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 54 examples.
+I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
+
 
 The list of examples is found here: [JavaFX Example List](#javafx-example-list)
 
@@ -94,6 +94,7 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [FXML Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/fxml/FXMLExample.java)
  - [HTMLEditor Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/htmleditor/HtmlEditorExample.java)
  - [Hyperlink Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/hyperlink/HyperlinkExample.java)
+ - [ImageView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/imageview/ImageViewExample.java)
  - [Label Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/label/LabelExample.java)
  - [Media Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/media/MediaExample.java)
  - [Pagination Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/pagination/PaginationExample.java)
