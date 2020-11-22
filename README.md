@@ -1,5 +1,5 @@
 # JavaFX Examples
-This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 54 examples.
+This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 57 examples.
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
@@ -129,5 +129,8 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
    - [3D Basics Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/gfx3d/Gfx3DExample.java)
  - Transformations Examples
    - [Transformations Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/transformations/TransformationsExample.java)
+   - [Translate Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/transformations/TranslateTransformationsExample.java)
+   - [Rotate Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/transformations/RotateTransformationsExample.java)
+   - [Scale Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/transformations/ScaleTransformationsExample.java)
  - Drag and Drop Examples
    - [Drag and Drop Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/draganddrop/DragAndDropExample.java)
