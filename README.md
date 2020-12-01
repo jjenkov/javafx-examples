@@ -100,7 +100,7 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [Media Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/media/MediaExample.java)
  - [Pagination Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/pagination/PaginationExample.java)
  - [ProgressBar Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/progressbar/ProgressBarExample.java)
- - [Properties Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/properties/PropertiesExample.java)
+ - [Properties Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/properties/PropertyExample.java)
  - [ScrollPane Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/scrollpane/ScrollPaneExample.java)
  - [Separator Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/separator/SeparatorExample.java)
  - [Slider Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/slider/SliderExample.java)
