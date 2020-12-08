@@ -7,7 +7,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class LabelExample extends Application {
+public class LabelFontExample extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -15,7 +15,9 @@ public class LabelExample extends Application {
 
     public void start(Stage primaryStage) {
 
-        Label label = new Label("Label Text");
+        Label label = new Label("A label with custom font set.");
+
+        label.setFont(new Font("Arial", 24));
 
         VBox vBox = new VBox(label);
         Scene scene = new Scene(vBox);

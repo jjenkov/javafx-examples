@@ -1,5 +1,5 @@
 # JavaFX Examples
-This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 60 examples.
+This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 62 examples.
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
@@ -97,7 +97,10 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [HTMLEditor Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/htmleditor/HtmlEditorExample.java)
  - [Hyperlink Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/hyperlink/HyperlinkExample.java)
  - [ImageView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/imageview/ImageViewExample.java)
- - [Label Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/label/LabelExample.java)
+ - Label Examples
+   - [Label Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/label/LabelExample.java)
+   - [Label Font Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/label/LabelFontExample.java)
+   - [Label Change Text Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/label/LabelChangeTextExample.java)
  - [Media Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/media/MediaExample.java)
  - [Pagination Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/pagination/PaginationExample.java)
  - [ProgressBar Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/progressbar/ProgressBarExample.java)
