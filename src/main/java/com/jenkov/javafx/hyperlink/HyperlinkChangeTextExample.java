@@ -6,7 +6,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class HyperlinkExample extends Application {
+public class HyperlinkChangeTextExample extends Application {
     public static void main(String[] args) {
         launch(args);
     }
@@ -16,6 +16,8 @@ public class HyperlinkExample extends Application {
         primaryStage.setTitle("JavaFX App");
 
         Hyperlink link = new Hyperlink("Click Me!");
+
+        link.setText("New Link Text");
 
         link.setOnAction((event) -> {
             System.out.println("Hyperlink clicked");

@@ -1,5 +1,5 @@
 # JavaFX Examples
-This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 62 examples.
+This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 64 examples.
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
@@ -95,7 +95,10 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [Font Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/font/FontExample.java)
  - [FXML Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/fxml/FXMLExample.java)
  - [HTMLEditor Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/htmleditor/HtmlEditorExample.java)
- - [Hyperlink Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/hyperlink/HyperlinkExample.java)
+   Hyperlink Examples
+   - [Hyperlink Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/hyperlink/HyperlinkExample.java)
+   - [Hyperlink Font Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/hyperlink/HyperlinkFontExample.java)
+   - [Hyperlink Change Text Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/hyperlink/HyperlinkChangeTextExample.java)
  - [ImageView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/imageview/ImageViewExample.java)
  - Label Examples
    - [Label Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/label/LabelExample.java)
