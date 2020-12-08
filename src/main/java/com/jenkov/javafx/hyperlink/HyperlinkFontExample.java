@@ -18,6 +18,7 @@ public class HyperlinkFontExample extends Application {
         primaryStage.setTitle("JavaFX App");
 
         Hyperlink link = new Hyperlink("Click Me!");
+
         Font courierNewFontBold36 = Font.font("Courier New", FontWeight.BOLD, 36);
 
         link.setFont(courierNewFontBold36);

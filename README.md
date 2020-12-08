@@ -1,5 +1,5 @@
 # JavaFX Examples
-This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 64 examples.
+This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 65 examples.
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
@@ -79,6 +79,7 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [Scene Cursor Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/scene/SceneCursorExample.java)
  - Button Examples
    - [Button Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/ButtonExample.java)
+   - [Button Font Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/ButtonFontExample.java)
    - [Disabled Button Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/DisabledButtonExample.java)
    - [Normal, Default and Cancel Mode Button Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/ButtonDefaultAndCancelModesExample.java)
    - [Button FXML Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/button/ButtonFXMLExample.java)
