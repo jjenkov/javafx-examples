@@ -1,5 +1,5 @@
 # JavaFX Examples
-This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 65 examples.
+This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 68 examples.
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
@@ -106,6 +106,10 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
    - [Label Font Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/label/LabelFontExample.java)
    - [Label Change Text Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/label/LabelChangeTextExample.java)
  - [Media Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/media/MediaExample.java)
+ - MenuButton Examples
+   - [MenuButton Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/menubutton/MenuButtonExample.java)
+   - [MenuButton Font Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/menubutton/MenuButtonFontExample.java)
+   - [MenuButton Icon Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/menubutton/MenuButtonIconExample.java)
  - [Pagination Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/pagination/PaginationExample.java)
  - [ProgressBar Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/progressbar/ProgressBarExample.java)
  - [Properties Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/properties/PropertyExample.java)
