@@ -35,6 +35,9 @@ public class AutoResponsiveLayout {
     }
 
     public static class PaneLayoutInfo {
+
+        public List<WidgetLayoutInfo> widgetLayoutInfos = new ArrayList<>();
+
         public int    noOfRows    = 0;
         public double maxRowWidth = 0.0D;
 
@@ -42,6 +45,70 @@ public class AutoResponsiveLayout {
         public double avgRowWidth = 0.0D;  // total child width divided by number of rows.
 
         public double visibleHeight = 0.0D; // The height visible within the parent ScrollPane
+
+        public List<List<WidgetLayoutInfo>> rows = new ArrayList<>();
+
+        public void initRows() {
+            int missingRows = noOfRows - rows.size();
+            for(int i=0; i<missingRows; i++) {
+                rows.add(new ArrayList<WidgetLayoutInfo>());
+            }
+        }
+        public void resetRows() {
+            for(int i=0; i<rows.size(); i++) {
+                List<WidgetLayoutInfo> rowList = rows.get(i);
+                rowList.clear();
+            }
+        }
+
+        public void assignWidgetsToRows() {
+            resetRows();
+            for(int i=0; i<widgetLayoutInfos.size(); i++) {
+                WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
+                List<WidgetLayoutInfo> rowList = rows.get(widgetLayoutInfo.rowNo);
+                rowList.add(widgetLayoutInfo);
+            }
+        }
+
+        public int determineRowCountFromWidgetLayoutInfos() {
+            this.noOfRows = getLastWidgetLayoutInfo(this.widgetLayoutInfos).rowNo + 1; // row numbers are 0-based (first row has index 0)
+            return this.noOfRows;
+        }
+
+        private WidgetLayoutInfo getLastWidgetLayoutInfo(List<WidgetLayoutInfo> widgetLayoutInfos) {
+            return widgetLayoutInfos.get(widgetLayoutInfos.size()-1);
+        }
+
+        public void calculateTotalChildMinWidth(){
+            this.totalChildWidth = 0.0D;
+            for(int i=0; i<this.widgetLayoutInfos.size(); i++) {
+                WidgetLayoutInfo widgetLayoutInfo = this.widgetLayoutInfos.get(i);
+                double childWidth = widgetLayoutInfo.minWidth;
+                this.totalChildWidth += childWidth;
+            }
+        }
+
+        public void calculateAverageRowWidthBasedOnMinWidths() {
+            this.avgRowWidth = this.totalChildWidth / this.noOfRows;
+        }
+
+        private double calcMinimumUsedRowHeights() {
+            int rowEndIndex = 0;
+            double minimumUsedRowHeights = 0.0D;
+            for(int rowNo = 0; rowNo < this.noOfRows; rowNo++){
+                double highestWidgetsOnRow = 0.0D;
+                while(rowEndIndex < this.widgetLayoutInfos.size() && rowNo == this.widgetLayoutInfos.get(rowEndIndex).rowNo) {
+                    WidgetLayoutInfo widgetLayoutInfo = this.widgetLayoutInfos.get(rowEndIndex);
+                    highestWidgetsOnRow = Math.max(highestWidgetsOnRow, widgetLayoutInfo.minHeight);
+                    rowEndIndex++;
+                }
+                minimumUsedRowHeights += highestWidgetsOnRow;
+            }
+            return minimumUsedRowHeights;
+        }
+
+
+
     }
 
     // Feature flags. All features should be enabled for a fully automatic responsive layout
@@ -52,7 +119,6 @@ public class AutoResponsiveLayout {
     protected boolean extendChildHeight = true;
 
     PaneLayoutInfo          paneLayoutInfo = new PaneLayoutInfo();
-    List<WidgetLayoutInfo> widgetLayoutInfos = new ArrayList<>();
 
 
 
@@ -78,7 +144,8 @@ public class AutoResponsiveLayout {
 
 
     public void clear() {
-        this.widgetLayoutInfos.clear();
+        this.paneLayoutInfo.resetRows();
+        this.paneLayoutInfo.widgetLayoutInfos.clear();
         this.targetPane.getChildren().clear();
     }
 
@@ -97,49 +164,41 @@ public class AutoResponsiveLayout {
 
     public void addWidget(Region child, WidgetLayoutInfo layoutInfo) {
         this.targetPane.getChildren().add(child);
-        this.widgetLayoutInfos.add(layoutInfo);
+        this.paneLayoutInfo.widgetLayoutInfos.add(layoutInfo);
 
     }
 
     protected void layoutPane() {
-        System.out.println("============== BEGIN LAYOUT ===============");
-
+        //System.out.println("============== BEGIN LAYOUT ===============");
         ObservableList<Node> children = this.targetPane.getChildren();
         if(children.size() == 0) {
             return;
         }
 
-        //double parentHeight = pane.getParent().getLayoutBounds().getHeight();
-        //System.out.println("Parent height: " + parentHeight);
-
         transferMinWidthsAndHeightsToWidths();
 
-
         // Phase 1: Divide children into rows based on their minimum widths
-        //paneLayoutInfo.visibleHeight = targetParentPane.getHeight();
-        //paneLayoutInfo.maxRowWidth   = newWidth;
-        assignChildrenToRowsUsingMaxRowWidth(paneLayoutInfo.maxRowWidth, children, widgetLayoutInfos);
-        //System.out.println("Layout pane of width: " + paneLayoutInfo.maxRowWidth);
+        assignChildrenToRowsNumbersAccordingToMinWidths();
 
-        //adjustPaneToParentScrollPane(newValue);
-        adjustPaneToParentScrollPaneOrMinUsedRowsHeight(targetParentPane.getViewportBounds());
+        this.paneLayoutInfo.determineRowCountFromWidgetLayoutInfos();
+        //this.paneLayoutInfo.initRows();
+        //this.paneLayoutInfo.resetRows();
+        //1½this.paneLayoutInfo.assignWidgetsToRows();
 
-
-        //printWidgetRows(children);
+        adjustPaneToParentScrollPaneOrMinUsedRowsHeight();
 
         // Phase 2.1: Now that number of rows is decided, calculate the average width of rows
-        calculateTotalChildMinWidth(paneLayoutInfo, children);
-        paneLayoutInfo.noOfRows    = getLastWidgetLayoutInfo(widgetLayoutInfos).rowNo + 1; // row numbers are 0-based (first row has index 0)
-        paneLayoutInfo.avgRowWidth = paneLayoutInfo.totalChildWidth / paneLayoutInfo.noOfRows;
+        paneLayoutInfo.calculateTotalChildMinWidth();
+        paneLayoutInfo.calculateAverageRowWidthBasedOnMinWidths();
 
         // Phase 2.2: Assign children to rows based on average row width instead of max row width - for a more even distribution of children.
         if(this.balanceRows) {
-            assignChildrenToRowsUsingAverageRowWidth(paneLayoutInfo.avgRowWidth, paneLayoutInfo.maxRowWidth, children, widgetLayoutInfos);
+            assignChildrenToRowsUsingAverageRowWidth();
         }
 
         // Phase 2.3 Pull up "dangling" widgets towards the top of the pane, so the grid looks more similar.
         if(this.pullUpChildren) {
-            pullUpWidgets(children, widgetLayoutInfos);
+            pullUpWidgets(children, this.paneLayoutInfo.widgetLayoutInfos);
         }
 
         // Phase 3: Expand widths of children to match row width
@@ -152,17 +211,17 @@ public class AutoResponsiveLayout {
             expandRowHeights();
         }
 
-
-        // todo calculate minimum width of Pane ( = width of widest child)
-
-
         // Phase 5: Position children according to index and row
-        positionAndSizeChildren(children, widgetLayoutInfos);
+        positionAndSizeChildren(children, this.paneLayoutInfo.widgetLayoutInfos);
 
     }
 
-    private void adjustPaneToParentScrollPaneOrMinUsedRowsHeight(Bounds newValue) {
-        double minimumUsedRowHeights = calcMinimumUsedRowHeights();
+    private int determineRowCountFromWidgetLayoutInfos() {
+        return getLastWidgetLayoutInfo(this.paneLayoutInfo.widgetLayoutInfos).rowNo + 1; // row numbers are 0-based (first row has index 0)
+    }
+
+    private void adjustPaneToParentScrollPaneOrMinUsedRowsHeight() {
+        double minimumUsedRowHeights = this.paneLayoutInfo.calcMinimumUsedRowHeights();
         double newHeight = Math.max(this.paneLayoutInfo.visibleHeight, minimumUsedRowHeights);
         this.targetPane.setMinHeight(newHeight);
         this.targetPane.setPrefHeight(newHeight);
@@ -171,8 +230,8 @@ public class AutoResponsiveLayout {
 
 
     private void transferMinWidthsAndHeightsToWidths() {
-        for(int i=0; i<widgetLayoutInfos.size(); i++){
-            WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
+        for(int i=0; i<this.paneLayoutInfo.widgetLayoutInfos.size(); i++){
+            WidgetLayoutInfo widgetLayoutInfo = this.paneLayoutInfo.widgetLayoutInfos.get(i);
             widgetLayoutInfo.width  = widgetLayoutInfo.minWidth;
             widgetLayoutInfo.height = widgetLayoutInfo.minHeight;
         }
@@ -224,13 +283,13 @@ public class AutoResponsiveLayout {
         for(int rowNo = 0; rowNo < paneLayoutInfo.noOfRows; rowNo++){
 
 
-            while(rowEndIndex < widgetLayoutInfos.size() && rowNo == widgetLayoutInfos.get(rowEndIndex).rowNo){
+            while(rowEndIndex < this.paneLayoutInfo.widgetLayoutInfos.size() && rowNo == this.paneLayoutInfo.widgetLayoutInfos.get(rowEndIndex).rowNo){
                 rowEndIndex++;
             }
             for(int i=rowStartIndex; i<rowEndIndex; i++) {
                 //Node node = children.get(i);
                 //usedRowWidth += node.getLayoutBounds().getWidth();
-                WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
+                WidgetLayoutInfo widgetLayoutInfo = this.paneLayoutInfo.widgetLayoutInfos.get(i);
                 usedRowWidth += widgetLayoutInfo.minWidth;
             }
 
@@ -243,7 +302,7 @@ public class AutoResponsiveLayout {
             for(int i=rowStartIndex; i<rowEndIndex; i++) {
                 Node node = children.get(i);
 
-                WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
+                WidgetLayoutInfo widgetLayoutInfo = this.paneLayoutInfo.widgetLayoutInfos.get(i);
                 double childWidth      = widgetLayoutInfo.minWidth;
                 double childToRowRatio = childWidth / usedRowWidth;
                 double childWidthExtension = unusedRowWidth * childToRowRatio;
@@ -264,7 +323,7 @@ public class AutoResponsiveLayout {
 
 
     private void expandRowHeights() {
-        double minimumUsedRowHeights = calcMinimumUsedRowHeights();
+        double minimumUsedRowHeights = this.paneLayoutInfo.calcMinimumUsedRowHeights();
 
         double unusedHeight = 0.0D;
         //if(this.paneLayoutInfo.visibleHeight > this.targetPane.getHeight()) {
@@ -275,18 +334,18 @@ public class AutoResponsiveLayout {
 
         //if minimumUsedRowHeights is larger than available height - do NOT use a negative unusedHeight - but use 0.
 
-        System.out.println("Pane height        : " + this.targetPane.getHeight());
-        System.out.println("Visible height     : " + this.paneLayoutInfo.visibleHeight);
-        System.out.println("Minimum rows height: " + minimumUsedRowHeights);
-        System.out.println("Unused height      : " + unusedHeight);
+        //System.out.println("Pane height        : " + this.targetPane.getHeight());
+        //System.out.println("Visible height     : " + this.paneLayoutInfo.visibleHeight);
+        //System.out.println("Minimum rows height: " + minimumUsedRowHeights);
+        //System.out.println("Unused height      : " + unusedHeight);
 
         int rowStartIndex = 0;
         int rowEndIndex   = 0;
         for(int rowNo = 0; rowNo < paneLayoutInfo.noOfRows; rowNo++){
             rowStartIndex = rowEndIndex;
             double highestWidgetsOnRow = 0.0D;
-            while(rowEndIndex < widgetLayoutInfos.size() && rowNo == widgetLayoutInfos.get(rowEndIndex).rowNo) {
-                WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(rowEndIndex);
+            while(rowEndIndex < this.paneLayoutInfo.widgetLayoutInfos.size() && rowNo == this.paneLayoutInfo.widgetLayoutInfos.get(rowEndIndex).rowNo) {
+                WidgetLayoutInfo widgetLayoutInfo = this.paneLayoutInfo.widgetLayoutInfos.get(rowEndIndex);
                 highestWidgetsOnRow = Math.max(highestWidgetsOnRow, widgetLayoutInfo.height);
                 rowEndIndex++;
             }
@@ -295,11 +354,11 @@ public class AutoResponsiveLayout {
             double expandedHeight = highestWidgetsOnRow + rowExtension;
             //System.out.println("Row Height     : " + highestWidgetsOnRow);
             //System.out.println("Unused height  : " + unusedHeight);
-            System.out.println("Expanded height: " + expandedHeight);
+            //System.out.println("Expanded height: " + expandedHeight);
 
             rowEndIndex = rowStartIndex;
-            while(rowEndIndex < widgetLayoutInfos.size() && rowNo == widgetLayoutInfos.get(rowEndIndex).rowNo) {
-                WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(rowEndIndex);
+            while(rowEndIndex < this.paneLayoutInfo.widgetLayoutInfos.size() && rowNo == this.paneLayoutInfo.widgetLayoutInfos.get(rowEndIndex).rowNo) {
+                WidgetLayoutInfo widgetLayoutInfo = this.paneLayoutInfo.widgetLayoutInfos.get(rowEndIndex);
                 widgetLayoutInfo.height = expandedHeight;
                 rowEndIndex++;
             }
@@ -307,51 +366,26 @@ public class AutoResponsiveLayout {
         }
     }
 
-    private double calcMinimumUsedRowHeights() {
-        int rowEndIndex = 0;
-        double minimumUsedRowHeights = 0.0D;
-        for(int rowNo = 0; rowNo < paneLayoutInfo.noOfRows; rowNo++){
-            double highestWidgetsOnRow = 0.0D;
-            while(rowEndIndex < widgetLayoutInfos.size() && rowNo == widgetLayoutInfos.get(rowEndIndex).rowNo) {
-                WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(rowEndIndex);
-                highestWidgetsOnRow = Math.max(highestWidgetsOnRow, widgetLayoutInfo.minHeight);
-                rowEndIndex++;
-            }
-            minimumUsedRowHeights += highestWidgetsOnRow;
-        }
-        return minimumUsedRowHeights;
-    }
-
-
     private void printWidgetRows(ObservableList<Node> children) {
         System.out.println("=== Widget Row Nos ===");
         for(int i = 0; i< children.size(); i++) {
-            WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
+            WidgetLayoutInfo widgetLayoutInfo = this.paneLayoutInfo.widgetLayoutInfos.get(i);
             System.out.println("Widget " + i + " has row " + widgetLayoutInfo.rowNo);
         }
     }
-
-
 
     private WidgetLayoutInfo getLastWidgetLayoutInfo(List<WidgetLayoutInfo> widgetLayoutInfos) {
         return widgetLayoutInfos.get(widgetLayoutInfos.size()-1);
     }
 
+    private void assignChildrenToRowsNumbersAccordingToMinWidths() {
+        ObservableList<Node> children = targetPane.getChildren();
+        double maxRowWidth = paneLayoutInfo.maxRowWidth;
 
-    private void calculateTotalChildMinWidth(PaneLayoutInfo paneLayoutInfo, ObservableList<Node> children){
-        paneLayoutInfo.totalChildWidth = 0.0D;
-        for(int i=0; i<children.size(); i++) {
-            WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
-            double childWidth = widgetLayoutInfo.minWidth;
-            paneLayoutInfo.totalChildWidth += childWidth;
-        }
-    }
-
-    private void assignChildrenToRowsUsingMaxRowWidth(double maxRowWidth, ObservableList<Node> children, List<WidgetLayoutInfo> widgetLayoutInfos) {
         double widgetsOnRowWidth = 0.0D;
         int rowNo = 0;
         for(int i = 0; i < children.size(); i++) {
-            WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
+            WidgetLayoutInfo widgetLayoutInfo = this.paneLayoutInfo.widgetLayoutInfos.get(i);
 
             double childWidth =  widgetLayoutInfo.minWidth;
             widgetsOnRowWidth += childWidth;
@@ -363,13 +397,15 @@ public class AutoResponsiveLayout {
         }
     }
 
-    private void assignChildrenToRowsUsingAverageRowWidth(double avgRowWidth, double maxRowWidth, ObservableList<Node> children, List<WidgetLayoutInfo> widgetLayoutInfos) {
+    private void assignChildrenToRowsUsingAverageRowWidth() {
         //System.out.println("Avg. row width: " + avgRowWidth);
+        double avgRowWidth = paneLayoutInfo.avgRowWidth;
+        double maxRowWidth = paneLayoutInfo.maxRowWidth;
         double totalWidgetsWidthUsed = 0.0D;
         double widgetWidthOnRowUsed  = 0.0D;
         int rowNo = 0;
-        for(int i = 0; i < children.size(); i++) {
-            WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
+        for(int i = 0; i < this.paneLayoutInfo.widgetLayoutInfos.size(); i++) {
+            WidgetLayoutInfo widgetLayoutInfo = this.paneLayoutInfo.widgetLayoutInfos.get(i);
             double childWidth = widgetLayoutInfo.minWidth;
 
             widgetWidthOnRowUsed  += childWidth;
@@ -432,11 +468,7 @@ public class AutoResponsiveLayout {
             child.setPrefWidth(widgetLayoutInfo.width);
             child.setPrefHeight(widgetLayoutInfo.height);
 
-            //x += child.getLayoutBounds().getWidth();
             x += widgetLayoutInfo.width;
-            //x += widgetLayoutInfo.minWidth;
-
-            //System.out.println( "Positioning child [" + child.getLayoutBounds().getWidth() + " / " + widgetLayoutInfo.width + " ]");
         }
     }
 
