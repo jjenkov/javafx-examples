@@ -46,6 +46,7 @@ public class AutoResponsiveLayout {
 
         public double visibleHeight = 0.0D; // The height visible within the parent ScrollPane
 
+        /*
         public List<List<WidgetLayoutInfo>> rows = new ArrayList<>();
 
         public void initRows() {
@@ -60,7 +61,6 @@ public class AutoResponsiveLayout {
                 rowList.clear();
             }
         }
-
         public void assignWidgetsToRows() {
             resetRows();
             for(int i=0; i<widgetLayoutInfos.size(); i++) {
@@ -69,6 +69,7 @@ public class AutoResponsiveLayout {
                 rowList.add(widgetLayoutInfo);
             }
         }
+       */
 
         public int determineRowCountFromWidgetLayoutInfos() {
             this.noOfRows = getLastWidgetLayoutInfo(this.widgetLayoutInfos).rowNo + 1; // row numbers are 0-based (first row has index 0)
@@ -144,7 +145,7 @@ public class AutoResponsiveLayout {
 
 
     public void clear() {
-        this.paneLayoutInfo.resetRows();
+        //this.paneLayoutInfo.resetRows();
         this.paneLayoutInfo.widgetLayoutInfos.clear();
         this.targetPane.getChildren().clear();
     }
@@ -183,7 +184,7 @@ public class AutoResponsiveLayout {
         this.paneLayoutInfo.determineRowCountFromWidgetLayoutInfos();
         //this.paneLayoutInfo.initRows();
         //this.paneLayoutInfo.resetRows();
-        //1½this.paneLayoutInfo.assignWidgetsToRows();
+        //this.paneLayoutInfo.assignWidgetsToRows();
 
         adjustPaneToParentScrollPaneOrMinUsedRowsHeight();
 
