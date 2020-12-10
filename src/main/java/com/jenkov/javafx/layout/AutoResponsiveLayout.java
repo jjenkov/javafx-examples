@@ -295,7 +295,7 @@ public class AutoResponsiveLayout {
             double expandedHeight = highestWidgetsOnRow + rowExtension;
             //System.out.println("Row Height     : " + highestWidgetsOnRow);
             //System.out.println("Unused height  : " + unusedHeight);
-            //System.out.println("Expanded height: " + expandedHeight);
+            System.out.println("Expanded height: " + expandedHeight);
 
             rowEndIndex = rowStartIndex;
             while(rowEndIndex < widgetLayoutInfos.size() && rowNo == widgetLayoutInfos.get(rowEndIndex).rowNo) {
@@ -406,14 +406,17 @@ public class AutoResponsiveLayout {
             if(rowNo != widgetLayoutInfo.rowNo) {
 
                 double highestWidgetOnRow = 0.0D;
+                System.out.print("Calculating height for row: " + rowNo);
                 for(int j=i-1; j>=0; j--) {
-                    //System.out.println("Calculating height for row: " + rowNo);
                     WidgetLayoutInfo widgetOnRow = widgetLayoutInfos.get(j);
                     if(widgetOnRow.rowNo != rowNo) { //reached previous row - skip loop now.
                         break;
                     }
-                    highestWidgetOnRow = Math.max(highestWidgetOnRow, widgetOnRow.minHeight);
+                    //highestWidgetOnRow = Math.max(highestWidgetOnRow, widgetOnRow.minHeight);
+                    highestWidgetOnRow = Math.max(highestWidgetOnRow, widgetOnRow.height);
                 }
+                System.out.println(" => " + highestWidgetOnRow);
+
 
                 rowNo = widgetLayoutInfo.rowNo;
                 x = 0.0D;

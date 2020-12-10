@@ -30,7 +30,8 @@ public class AutoResponsiveLayoutExample extends Application {
         scrollPane.fitToWidthProperty().set(true);
         //scrollPane.fitToHeightProperty().set(true);
 
-        scrollPane.setPrefHeight(1024);
+        //scrollPane.setPrefHeight(1024);
+        scrollPane.setPrefHeight(4096);
 
         scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.vbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.AS_NEEDED);
