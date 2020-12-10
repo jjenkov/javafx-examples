@@ -6,7 +6,7 @@ I have plans to add lots more examples in the future, so make sure you star this
 The lists of examples are found here: 
 
 - [JavaFX Basic Examples](#javafx-basic-examples)
-- [JavaFX Advanced Exaples](#javafx-advanced-examples)
+- [JavaFX Advanced Examples](#javafx-advanced-examples)
 
 ## JavaFX Tutorial
 The examples come from my JavaFX tutorial series: [JavaFX Tutorial](http://tutorials.jenkov.com).
