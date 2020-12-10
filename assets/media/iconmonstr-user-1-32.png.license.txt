@@ -1,0 +1,8 @@
+The icon file iconmonstr-user-1-32.png is downloaded from the iconmonstr.com free, royalty free icon service.
+
+I have included this file in the GitHub repo *only* for use in the JavaFX icon and graphics examples.
+
+Please do not redistribute this file for any purpose! If you want to use this file, please go to iconmonstr.com
+and download it from there:
+
+https://iconmonstr.com/user-1-png/

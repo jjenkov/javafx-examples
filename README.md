@@ -3,7 +3,10 @@ This repository contains a growing collection of JavaFX examples. So far this Gi
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
-The list of examples is found here: [JavaFX Example List](#javafx-example-list)
+The lists of examples are found here: 
+
+- [JavaFX Basic Examples](#javafx-basic-examples)
+- [JavaFX Advanced Exaples](#javafx-advanced-examples)
 
 ## JavaFX Tutorial
 The examples come from my JavaFX tutorial series: [JavaFX Tutorial](http://tutorials.jenkov.com).
@@ -65,8 +68,8 @@ You can use Maven and edit the pom.xml file and change "mainClass" of openjfx pl
 If you have any suggestions for missing examples, create a GitHub issue in this repo, and / or ping me on 
 Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
 
-<a name="javafx-example-list"></a>
-# JavaFX Example List
+<a name="javafx-basic-examples"></a>
+# JavaFX Basic Examples
 
  - Stage Examples
    - [Stage Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/stage/StageExample.java)
@@ -148,3 +151,10 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
    - [Scale Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/transformations/ScaleTransformationsExample.java)
  - Drag and Drop Examples
    - [Drag and Drop Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/draganddrop/DragAndDropExample.java)
+
+
+<a name="javafx-advanced-examples"></a>
+# JavaFX Advanced Examples
+- [Auto-responsive Layout Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/layout/AutoResponsiveLayoutExample.java)
+
+

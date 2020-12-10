@@ -66,7 +66,7 @@ public class Gfx3DExampleDraft extends Application {
         root.setRotationAxis(Rotate.X_AXIS);
         root.setRotate(70);
 
-        Scene scene = new Scene(root, 500, 300, true);
+        Scene scene = new Scene(root, 500, 300, true); //true = use depth buffer in Scene
         scene.setCamera(camera);
         primaryStage.setScene(scene);
         primaryStage.setTitle("3D Example");
