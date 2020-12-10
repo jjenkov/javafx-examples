@@ -458,9 +458,6 @@ public class AutoResponsiveLayout {
                 rowNo = widgetLayoutInfo.rowNo;
                 x = 0.0D;
 
-                //y += child.getLayoutBounds().getHeight();
-                //y += widgetLayoutInfo.height;
-                //todo actually add rowHeight - not widget's height. Widget height only works with all widgets have the same height.
                 y += highestWidgetOnRow;
             }
 
