@@ -16,6 +16,13 @@ import java.util.List;
  * An example of how to implement your own layout of controls contained inside a Pane. The JavaFX Pane class does not
  * do any layout of its children. The Pane shows the children where the children wants to be layed out themselves.
  * Thus, by changing layout position of the children of a Pane you can change it's layout.
+ *
+ * Future potential improvements:
+ * - Remodel the code so it more clearly shows the algorithm - even though it may slow the algorithm down a bit.
+ * - Max widths on widgets
+ * - Vertical stacking of widgets
+ * - Confine widgets to fixed row number
+ *
  */
 public class AutoResponsiveLayout {
 
@@ -31,45 +38,50 @@ public class AutoResponsiveLayout {
         public double height    = 0.0D;
 
         public int   rowNo = 0;
+    }
 
+    public static class RowLayoutInfo {
+        public int    rowNo    = 0;
+        public double rowWidth = 0.0D;
+
+        public List<WidgetLayoutInfo> widgets = new ArrayList<>();
     }
 
     public static class PaneLayoutInfo {
 
         public List<WidgetLayoutInfo> widgetLayoutInfos = new ArrayList<>();
+        public List<RowLayoutInfo>    rowLayoutInfos    = new ArrayList<>();
 
         public int    noOfRows    = 0;
         public double maxRowWidth = 0.0D;
 
         public double totalChildWidth = 0.0D; //width of all children if placed on a single row
-        public double avgRowWidth = 0.0D;  // total child width divided by number of rows.
-
-        public double visibleHeight = 0.0D; // The height visible within the parent ScrollPane
-
-        /*
-        public List<List<WidgetLayoutInfo>> rows = new ArrayList<>();
+        public double avgRowWidth     = 0.0D;  // total child width divided by number of rows.
+        public double visibleHeight   = 0.0D; // The height visible within the parent ScrollPane
 
         public void initRows() {
-            int missingRows = noOfRows - rows.size();
-            for(int i=0; i<missingRows; i++) {
-                rows.add(new ArrayList<WidgetLayoutInfo>());
+            for(int i = this.rowLayoutInfos.size(); i <= noOfRows; i++) {
+                RowLayoutInfo rowLayoutInfo = new RowLayoutInfo();
+                rowLayoutInfo.rowNo = i;
+                this.rowLayoutInfos.add(rowLayoutInfo);
             }
         }
+
         public void resetRows() {
-            for(int i=0; i<rows.size(); i++) {
-                List<WidgetLayoutInfo> rowList = rows.get(i);
-                rowList.clear();
+            for(int i=0; i<this.rowLayoutInfos.size(); i++) {
+                RowLayoutInfo rowLayoutInfo = this.rowLayoutInfos.get(i);
+                rowLayoutInfo.widgets.clear();
             }
         }
+
         public void assignWidgetsToRows() {
             resetRows();
             for(int i=0; i<widgetLayoutInfos.size(); i++) {
                 WidgetLayoutInfo widgetLayoutInfo = widgetLayoutInfos.get(i);
-                List<WidgetLayoutInfo> rowList = rows.get(widgetLayoutInfo.rowNo);
-                rowList.add(widgetLayoutInfo);
+                RowLayoutInfo rowLayoutInfo = rowLayoutInfos.get(widgetLayoutInfo.rowNo);
+                rowLayoutInfo.widgets.add(widgetLayoutInfo);
             }
         }
-       */
 
         public int determineRowCountFromWidgetLayoutInfos() {
             this.noOfRows = getLastWidgetLayoutInfo(this.widgetLayoutInfos).rowNo + 1; // row numbers are 0-based (first row has index 0)
@@ -179,7 +191,7 @@ public class AutoResponsiveLayout {
         transferMinWidthsAndHeightsToWidths();
 
         // Phase 1: Divide children into rows based on their minimum widths
-        assignChildrenToRowsNumbersAccordingToMinWidths();
+        assignChildrenToRowNumbersAccordingToMinWidths();
 
         this.paneLayoutInfo.determineRowCountFromWidgetLayoutInfos();
         //this.paneLayoutInfo.initRows();
@@ -379,7 +391,7 @@ public class AutoResponsiveLayout {
         return widgetLayoutInfos.get(widgetLayoutInfos.size()-1);
     }
 
-    private void assignChildrenToRowsNumbersAccordingToMinWidths() {
+    private void assignChildrenToRowNumbersAccordingToMinWidths() {
         ObservableList<Node> children = targetPane.getChildren();
         double maxRowWidth = paneLayoutInfo.maxRowWidth;
 

@@ -130,6 +130,9 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
    - [TableView Map as Data Items Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tableview/TableViewMapDataItemsExample.java)
  - [Text Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/text/TextExample.java)
  - [TitledPane Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/titledpane/TitledPaneExample.java)
+ - ToggleButton Examples
+   - [ToggleButton Example](https://github.com/jjenkov/javafx-example/blob/main/src/main/java/com/jenkov/javafx/togglebutton/ToggleButtonExample.java)
+   - [ToggleButton Font Example](https://github.com/jjenkov/javafx-example/blob/main/src/main/java/com/jenkov/javafx/togglebutton/ToggleButtonFontExample.java)
  - [ToolBar Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/toolbar/ToolBarExample.java)
  - [ToolTip Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tooltip/ToolTipExample.java)
  - [TreeTableView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/treetableview/TreeTableViewExample.java)
