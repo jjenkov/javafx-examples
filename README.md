@@ -1,5 +1,5 @@
 # JavaFX Examples
-This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 69 examples.
+This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 71 examples.
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
