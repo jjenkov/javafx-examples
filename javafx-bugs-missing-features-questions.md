@@ -5,4 +5,6 @@ A list of JavaFX bugs I have found while making these JavaFX examples.
   (e.g. a labtop monitor to a bigger, externally attached monitor), the menu items showing when the MenuButton is
   activated no longer align with the button. There is a vertical gap in between the MenuButton and the menu items.
   
-  
+ 
+ 
+- How to set the font of a ChoiceBox and ComboBox? By setting a custom cell factory?
