@@ -25,6 +25,8 @@ public class ComboBoxExample extends Application {
         comboBox.getItems().add("Choice 1");
         comboBox.getItems().add("Choice 2");
 
+        comboBox.setEditable(true);
+
         comboBox.setOnAction((event) -> {
             int selectedIndex = comboBox.getSelectionModel().getSelectedIndex();
             Object selectedItem = comboBox.getSelectionModel().getSelectedItem();
