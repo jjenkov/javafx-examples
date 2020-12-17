@@ -24,6 +24,8 @@ public class TextAreaExample extends Application {
 
         textArea.setFont(Font.font("Arial", FontWeight.BOLD, 36));
 
+        String text = textArea.getText();
+
         Scene scene = new Scene(new Pane(textArea), 300, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
