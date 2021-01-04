@@ -1,5 +1,5 @@
 # JavaFX Examples
-This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 75 examples.
+This repository contains a growing collection of JavaFX examples. So far this GitHub repository contains 76 examples.
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
@@ -126,7 +126,8 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - [TabPane Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tabpane/TabPaneExample.java)
  - TableView Examples
    - [TableView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tableview/TableViewExample.java)
-   - [TableView Nested Colulmns Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tableview/TableViewNestedColumnsExample.java)
+   - [TableView Editable Column Cells Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tableview/TableViewEditableExample.java)
+   - [TableView Nested Columns Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tableview/TableViewNestedColumnsExample.java)
    - [TableView Selection Model Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tableview/TableViewSelectionModelExample.java)
    - [TableView Custom Rendering Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tableview/TableViewCustomRenderingExample.java)
    - [TableView Map as Data Items Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/tableview/TableViewMapDataItemsExample.java)
