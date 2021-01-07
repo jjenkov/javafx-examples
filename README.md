@@ -3,7 +3,7 @@ This repository contains a growing collection of JavaFX examples. So far this Gi
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
-The lists of examples are found here: 
+The lists of examples is found here: 
 
 - [JavaFX Basic Examples](#javafx-basic-examples)
 - [JavaFX Advanced Examples](#javafx-advanced-examples)
