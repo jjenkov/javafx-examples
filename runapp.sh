@@ -21,7 +21,7 @@ MODULELIST='javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media
 
 if [ ! -d "${MODULEDIR}" ]
 then
-    echo "External JAR library directory ${JARLIBDIR} not found.  Run 'gradle build' then re-run."
+    echo "External JAR library directory ${MODULEDIR} not found.  Run 'gradle build' then re-run."
     exit 1
 fi
 
