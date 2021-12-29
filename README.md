@@ -3,7 +3,7 @@ This repository contains a growing collection of JavaFX examples. So far this Gi
 I have plans to add lots more examples in the future, so make sure you star this repository for future reference ;-)
 
 
-The lists of examples is found here: 
+The lists of examples is found here:
 
 - [JavaFX Basic Examples](#javafx-basic-examples)
 - [JavaFX Advanced Examples](#javafx-advanced-examples)
@@ -12,22 +12,23 @@ The lists of examples is found here:
 The examples come from my JavaFX tutorial series: [JavaFX Tutorial](http://tutorials.jenkov.com).
 
 ## Java + JavaFX Version Used
-In general the examples in this repository will attempt to use the latest version of Java and JavaFX. 
+In general the examples in this repository will attempt to use the latest version of Java and JavaFX.
 For now the examples are tested with Java 14 and JavaFX 14 (yes, 15 + 15 are latest - will update soon!).
 
 ## Running the Examples
-There are 3 options to run the examples.
+There are several options to run the examples.
 
 - Using your IDE (IntelliJ IDEA / Eclipse / Netbeans)
 - Using Maven - passing main class to run on the command line
 - Using gradle - passing main class to run on the command line
 - Using Maven - configuring the main class inside the pom.xml
+- Using the wrapper script
 
 Some of these are covered in more detail below.
 
 ### Run the Examples in IntelliJ Idea(needs pre-downloaded javafx modules)
 To run the examples from within IntelliJ IDEA you must first create a new project in IntelliJ, and set the root
-directory to the directory into which you have cloned this Git repository. 
+directory to the directory into which you have cloned this Git repository.
 
 Second, you must download JavaFX and unzip the distribution to some directory.
 
@@ -63,9 +64,13 @@ You can use Maven and edit the pom.xml file and change "mainClass" of openjfx pl
 
 ./mvnw clean javafx:run
 
+### Run via the wrapper script
+The wrapper script runapp.sh can be used on Linux or macOS hosts. For example to run WebViewExample you can run
+
+./runapp.sh com.jenkov.javafx.webview.WebViewExample
 
 ## Suggestions
-If you have any suggestions for missing examples, create a GitHub issue in this repo, and / or ping me on 
+If you have any suggestions for missing examples, create a GitHub issue in this repo, and / or ping me on
 Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
 
 <a name="javafx-basic-examples"></a>
@@ -146,7 +151,7 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
  - WebView Examples
    - [WebView Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewExample.java)
    - [WebView JavaScript Integration Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewJavaScriptIntegrationExample.java)
-   - [WebView Mouse Wheel Zoom Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewMouseWheelZoomExample.java) 
+   - [WebView Mouse Wheel Zoom Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/webview/WebViewMouseWheelZoomExample.java)
      (Mouse wheel zoom code provided by Friedhold Matz (@FriedholdMatz on Twitter))
  - 2D Examples
    - [2D Basics Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/gfx2d/Gfx2DExample.java)
@@ -164,5 +169,3 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
 <a name="javafx-advanced-examples"></a>
 # JavaFX Advanced Examples
 - [Auto-responsive Layout Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/layout/AutoResponsiveLayoutExample.java)
-
-

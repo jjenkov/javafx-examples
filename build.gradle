@@ -17,7 +17,7 @@ plugins {
 /*
 run {
 	jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=*:5005'
-	standardInput = System.in    
+	standardInput = System.in
 }*/
 
 mainClassName = 'com.jenkov.javafx.ExampleRunnerFromMaven'
@@ -41,3 +41,12 @@ javafx {
 
 dependencies {
 }
+
+task extlibs(type: Copy) {
+  group 'distribution'
+  description 'Imports external JAR dependencies.'
+  from configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }
+  into "$buildDir/extlibs"
+}
+
+build.dependsOn extlibs
