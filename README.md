@@ -159,6 +159,8 @@ Twitter (@jjenkov) or LinkedIn (Jakob Jenkov).
    - [Scale Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/transformations/ScaleTransformationsExample.java)
  - Drag and Drop Examples
    - [Drag and Drop Example](https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/draganddrop/DragAndDropExample.java)
+ - Selenium Example
+   - { [Selenium Example]((https://github.com/jjenkov/javafx-examples/blob/main/src/main/java/com/jenkov/javafx/selenium/Selenium.java)
 
 
 <a name="javafx-advanced-examples"></a>
