@@ -51,7 +51,7 @@ add the following line to the ExampleRunner class main() method and then run Exa
 ### Run via Maven - Passing Main Class as Argument to Maven
 You can use maven and pass the example class you want to add. for example to run WebViewExample you can run
 
-./mvnw compile exec:java -Dexec.args="com.jenkov.javafx.webview.WebViewExample"
+./mvnw compile exec:java -D exec.args="com.jenkov.javafx.webview.WebViewExample"
 
 ### Run via Gradle - Passing Main Class as Argument to Gradle
 You can use gradle and pass the example class you want to add. for example to run WebViewExample you can run
