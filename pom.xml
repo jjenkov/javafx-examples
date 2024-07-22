@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<javafx.version>15.0.1</javafx.version>
+		<javafx.version>17.0.12</javafx.version>
 		<mainClass>com.jenkov.javafx.stage.MultipleStagesModalExample</mainClass>
 	</properties>
 
@@ -61,7 +61,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.3.0</version>
 				<configuration>
 					<mainClass>com.jenkov.javafx.ExampleRunnerFromMaven</mainClass>
 				</configuration>
@@ -70,7 +70,7 @@
 			<plugin>
 				<groupId>org.openjfx</groupId>
 				<artifactId>javafx-maven-plugin</artifactId>
-				<version>0.0.5</version>
+				<version>0.0.8</version>
 				<configuration>
 					<mainClass>${mainClass}</mainClass>
 				</configuration>
@@ -80,7 +80,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<release>14</release>
+					<release>17</release>
 				</configuration>
 			</plugin>
 
